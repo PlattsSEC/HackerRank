@@ -2,6 +2,9 @@
 x = int(raw_input())
 letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+"""
+Function to remove duplicates from the given keyword. Takes the keyword as the parameter
+"""
 def rem_dep(astring):
 
      my_set = set(astring)
@@ -12,6 +15,9 @@ def rem_dep(astring):
                my_set = my_set - set(i)
      return new_string
 
+"""
+Function to generate the cipherstring. Takes the keyword as a parameter
+"""
 def cipherkey(key):
 
 
@@ -73,6 +79,9 @@ def cipherkey(key):
     comp_string = "".join(new_column)
     return comp_string
 
+"""
+Function to decipher a string. Takes the keyword and the string as parameters.
+"""
 def uncipher(key,text):
 
     my_string = ""
