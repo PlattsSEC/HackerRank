@@ -29,4 +29,4 @@ for i in xrange(1,n+1):
         v = dfs(g,i,visited)
         if v > 1:
             max_len, min_len = max(max_len, v), min(min_len, v)
-print(str(min_len)+" "+str(max_len))
+print("{} {}".format(min_len,max_len))
