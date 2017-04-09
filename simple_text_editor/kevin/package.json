@@ -5,7 +5,7 @@
   "main": "kevin.js",
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/standard  && node spec/*js"
+    "test": "./node_modules/.bin/standard  && node ./node_modules/jasmine/bin/jasmine.js ./spec/*.js"
   },
   "author": "Kevin",
   "license": "UNLICENSED",
@@ -13,5 +13,16 @@
   "devDependencies": {
     "jasmine": "^2.5.3",
     "standard": "^10.0.0"
+  },
+  "standard": {
+    "globals" : [
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jasmine",
+      "spyOn"
+    ]
   }
 }
