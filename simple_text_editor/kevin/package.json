@@ -1,0 +1,28 @@
+{
+  "name": "simple_text_editor",
+  "version": "1.0.0",
+  "description": "HackerRank Problem: Simple Text Editor",
+  "main": "kevin.js",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/.bin/standard  && node ./node_modules/jasmine/bin/jasmine.js ./spec/*.js"
+  },
+  "author": "Kevin",
+  "license": "UNLICENSED",
+  "target": "es6",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "standard": "^10.0.0"
+  },
+  "standard": {
+    "globals" : [
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jasmine",
+      "spyOn"
+    ]
+  }
+}
