@@ -1,1 +1,0 @@
-[Here](https://www.hackerrank.com/challenges/electronics-shop) is the link to the problem set
