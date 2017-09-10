@@ -3,18 +3,18 @@ from collections import OrderedDict
 
 
 class KeyWordTranspositionCipher(object):
-
     def __init__(self, key, word):
         self.alphabet = ''.join(list(map(chr, range(65, 91))))
         self.key = key.upper()
         self.word = word.upper()
 
-    def _remove_duplicates(self)-> str:
+    def _remove_duplicates(self) -> str:
         return ''.join(OrderedDict.fromkeys(self.key))
 
     def _remove_chars_from_alphabet(self) -> str:
         letters = self._remove_duplicates()
-        return ''.join([letter for letter in self.alphabet if letter not in letters])
+        return ''.join(
+            [letter for letter in self.alphabet if letter not in letters])
 
     def _encrypt(self, word: str, key: str) -> str:
         return_text = []
@@ -26,7 +26,7 @@ class KeyWordTranspositionCipher(object):
             return_text.append(self.alphabet[position])
         return ''.join(return_text)
 
-    def encrypt(self)-> str:
+    def encrypt(self) -> str:
 
         self.key = self._remove_duplicates()
         new_alphabet = self._remove_chars_from_alphabet()

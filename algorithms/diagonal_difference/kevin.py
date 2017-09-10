@@ -1,5 +1,7 @@
 #!/usr/bin/env python
+
 from typing import List
+
 
 def get_matrix_row_from_input() -> List[int]:
     return [int(index) for index in input().strip().split(' ')]
