@@ -3,10 +3,7 @@ from itertools import combinations
 
 def check_if_t(s):
     chars = list(set(s))
-    flag = False
-    if s == "".join([chars[i%len(chars)] for i in range(len(s))]) or s == "".join([chars[::-1][i%len(chars)] for i in range(len(s))]):
-        flag = True
-    return flag
+    return True if s == "".join([chars[i%2] for i in range(len(s))]) or s == "".join([chars[::-1][i%2] for i in range(len(s))]) else False
 
 n = input()
 s = raw_input()
