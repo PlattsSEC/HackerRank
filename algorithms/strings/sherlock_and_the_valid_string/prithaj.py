@@ -9,7 +9,6 @@ def is_valid(s):
         return False
 
 s = raw_input().strip()
-freq = Counter(s)
 if is_valid(s):
     print "YES"
 else:
