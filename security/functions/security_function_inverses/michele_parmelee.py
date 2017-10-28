@@ -5,7 +5,7 @@ def checkInverse(n):
         y = list(range(1, n+1))
         # n space-separated integers (2nd line of input; entered as strings), 
         # spaces removed and put into a list (split()), mapped as ints and put into new list (map())
-        # (no longer in order as typed because of map()):
+        # Put into new list because maps are not subscriptable:
         x = list(map(int, input().split()))
         # zip() creates tuples of x values aggregated to y values, saved as a new list:
         z = list(zip(x, y))
