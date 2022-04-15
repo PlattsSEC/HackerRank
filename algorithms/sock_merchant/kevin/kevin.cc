@@ -1,25 +1,30 @@
-#include <iostream>
-#include <map>
+#include <cassert>
+#include <unordered_set>
+#include <vector>
 
-int main() {
+int sockMerchant(int n, const std::vector<int> input) {
+  std::unordered_set<int> socks;
+  // NOTE(kevin): C++17 has std::size
+  // but hackerrank is limited to C++14
+  socks.reserve(input.size());
 
-  int length = 0;
-
-  std::map<int, int> socks;
-  std::cin >> length;
-
-  int pair_count = 0;
-  int sock_integer;
-  for (int i = 0; i < length; i++) {
-    std::cin >> sock_integer;
-    if (socks.count(sock_integer) != 0) {
-      pair_count++;
-      socks.erase(sock_integer);
+  int count = 0;
+  for (const auto& element : input) {
+    if (socks.count(element)) {
+      count++;
+      socks.erase(element);
     } else {
-      socks[sock_integer] = 1;
+      socks.insert(element);
     }
   }
+  return count;
+}
 
-  std::cout << pair_count << std::endl;
-  return 0;
+int main() {
+  auto input = std::vector<int>{10, 20, 20, 10, 10, 30, 50, 10, 20};
+  auto n = 9;
+
+  auto want = 3;
+  auto got = sockMerchant(n, input);
+  assert(want == got);
 }
