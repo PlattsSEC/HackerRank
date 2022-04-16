@@ -1,17 +1,23 @@
-#!/bin/python3
+#!usr/bin/env python3
 # Kevin Boyette
-import sys
+import unittest
+from collections import Counter
 
-n = int(input().strip())
-c = [int(c_temp) for c_temp in input().strip().split(' ')]
 
-counts = []
-counter = 0
-for i in c:
-    if i in counts:
-        counter += 1
-        counts.remove(i)
-    else:
-        counts.append(i)
+def sockMerchant(_num_socks: int, sock_colors: list[int]) -> int:
+    color_counts = Counter(sock_colors)
+    return sum((color_counts[color] // 2 for color in color_counts))
 
-print(counter)
+
+class TestHackerRank(unittest.TestCase):
+    def test_given_case(self):
+        given = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+        n = 9
+
+        want = 3
+        got = sockMerchant(n, given)
+        self.assertEqual(want, got)
+
+
+if __name__ == "__main__":
+    unittest.main()
